@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="MJ Digital Services offers document formatting, CV preparation, typing, and flyer design.">
+  <title>MJ Digital Services | Good work. Clear results.</title>
+  <style>
+    :root {
+      --navy: #10233f;
+      --blue: #2457d6;
+      --blue-dark: #1744b5;
+      --ink: #172033;
+      --muted: #647084;
+      --paper: #f5f7fb;
+      --line: #e1e7f0;
+      --white: #ffffff;
+      --mint: #dff8ef;
+      --radius: 20px;
+      --shadow: 0 18px 55px rgba(16, 35, 63, .09);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink); background: var(--white); line-height: 1.6;
+    }
+    a { color: inherit; }
+    .wrap { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .topbar { background: var(--navy); color: #dce7ff; font-size: .88rem; padding: 9px 0; }
+    .topbar .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    header { background: rgba(255,255,255,.94); border-bottom:1px solid var(--line); position: sticky; top:0; z-index:10; backdrop-filter: blur(12px); }
+    .nav { display:flex; align-items:center; justify-content:space-between; gap:20px; min-height:78px; }
+    .brand { display:flex; align-items:center; gap:12px; text-decoration:none; font-weight:800; letter-spacing:-.03em; }
+    .logo { width:43px; height:43px; display:grid; place-items:center; border-radius:14px; background:linear-gradient(135deg, var(--blue), #63a7ff); color:white; font-weight:900; box-shadow:0 8px 20px #2457d633; }
+    .brand small { display:block; color:var(--muted); font-weight:600; letter-spacing:0; font-size:.72rem; margin-top:-3px; }
+    nav { display:flex; gap:24px; align-items:center; }
+    nav a { text-decoration:none; color:#3d4960; font-size:.94rem; font-weight:650; }
+    nav a:hover { color:var(--blue); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; border:0; border-radius:12px; padding:13px 18px; text-decoration:none; cursor:pointer; font:inherit; font-weight:750; transition:transform .15s ease, background .15s ease; }
+    .btn:hover { transform:translateY(-1px); }
+    .primary { background:var(--blue); color:white; }
+    .primary:hover { background:var(--blue-dark); }
+    .secondary { background:white; border:1px solid var(--line); color:var(--navy); }
+    .whatsapp { background:#168b57; color:white; }
+    .hero { overflow:hidden; background:radial-gradient(circle at 86% 10%, #dce9ff 0, transparent 29%), linear-gradient(180deg, #f8faff, #fff); padding:78px 0 70px; }
+    .hero-grid { display:grid; grid-template-columns:1.12fr .88fr; align-items:center; gap:56px; }
+    .eyebrow { display:inline-flex; align-items:center; gap:8px; background:#eaf1ff; color:var(--blue-dark); padding:7px 12px; border-radius:99px; font-size:.82rem; font-weight:800; }
+    h1 { color:var(--navy); font-size:clamp(2.5rem, 5vw, 4.4rem); line-height:1.05; letter-spacing:-.055em; margin:20px 0; }
+    h1 span { color:var(--blue); }
+    .lead { color:#58657a; font-size:1.12rem; max-width:600px; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+    .trust { display:flex; gap:18px; flex-wrap:wrap; margin-top:25px; color:var(--muted); font-size:.88rem; }
+    .trust span::before { content:"✓"; color:#159765; font-weight:900; margin-right:7px; }
+    .preview { background:white; border:1px solid #e5ebf5; border-radius:26px; padding:25px; box-shadow:var(--shadow); transform:rotate(1deg); }
+    .preview-top { display:flex; align-items:center; justify-content:space-between; margin-bottom:20px; }
+    .dots { display:flex; gap:5px; } .dots i { width:8px; height:8px; background:#d7deea; border-radius:50%; }
+    .preview-label { color:var(--muted); font-size:.8rem; font-weight:700; }
+    .preview-card { display:flex; gap:13px; align-items:center; padding:15px; background:#f7f9fd; border:1px solid #edf0f6; border-radius:15px; margin:10px 0; }
+    .preview-icon { width:43px; height:43px; border-radius:13px; display:grid; place-items:center; background:#e7efff; font-size:1.25rem; flex-shrink:0; }
+    .preview-card strong { display:block; color:var(--navy); }
+    .preview-card small { color:var(--muted); }
+    .mini-tag { margin-left:auto; font-size:.73rem; font-weight:800; color:#128257; background:var(--mint); padding:5px 8px; border-radius:8px; }
+    section { padding:76px 0; }
+    .section-head { max-width:650px; margin-bottom:32px; }
+    .section-head h2 { color:var(--navy); font-size:clamp(1.8rem, 3vw, 2.65rem); line-height:1.15; letter-spacing:-.04em; margin:10px 0; }
+    .section-head p { color:var(--muted); margin:0; }
+    .services { background:var(--paper); }
+    .cards { display:grid; grid-template-columns:repeat(4, 1fr); gap:16px; }
+    .service-card { background:white; border:1px solid var(--line); border-radius:var(--radius); padding:23px; box-shadow:0 6px 22px rgba(16,35,63,.025); }
+    .service-card .emoji { width:49px; height:49px; display:grid; place-items:center; background:#edf3ff; border-radius:15px; font-size:1.4rem; margin-bottom:18px; }
+    .service-card h3 { margin:0 0 8px; color:var(--navy); font-size:1.08rem; }
+    .service-card p { color:var(--muted); font-size:.93rem; margin:0; }
+    .how-grid { display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; }
+    .step { padding:22px; border:1px solid var(--line); border-radius:var(--radius); }
+    .step-number { display:grid; place-items:center; width:38px; height:38px; border-radius:12px; background:var(--navy); color:white; font-weight:850; margin-bottom:14px; }
+    .step h3 { margin:0 0 6px; color:var(--navy); }
+    .step p { margin:0; color:var(--muted); font-size:.94rem; }
+    .contact { background:var(--navy); color:white; }
+    .contact .section-head h2 { color:white; }
+    .contact .section-head p { color:#c5d1e4; }
+    .contact-grid { display:grid; grid-template-columns:.82fr 1.18fr; gap:36px; align-items:start; }
+    .contact-note { padding:24px; border:1px solid #ffffff24; border-radius:var(--radius); background:#ffffff09; }
+    .contact-note h3 { margin-top:0; }
+    .contact-note p, .contact-note li { color:#cbd7e9; font-size:.95rem; }
+    .contact-note ul { padding-left:20px; }
+    form { background:white; color:var(--ink); padding:27px; border-radius:var(--radius); box-shadow:0 18px 50px #0002; }
+    .form-row { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+    label { display:block; font-size:.87rem; font-weight:750; color:#344057; margin-bottom:6px; }
+    .field { margin-bottom:15px; }
+    input, select, textarea { width:100%; border:1px solid #d8dfeb; border-radius:11px; padding:12px 13px; font:inherit; color:var(--ink); background:white; outline:none; }
+    input:focus, select:focus, textarea:focus { border-color:var(--blue); box-shadow:0 0 0 3px #2457d61a; }
+    textarea { min-height:115px; resize:vertical; }
+    .form-help { color:var(--muted); font-size:.82rem; margin:0 0 15px; }
+    .form-actions { display:flex; gap:10px; flex-wrap:wrap; }
+    .form-actions .btn { flex:1; min-width:180px; }
+    .status { display:none; margin-top:14px; border-radius:10px; background:#eaf8f0; color:#116b43; padding:12px; font-size:.9rem; }
+    .status.show { display:block; }
+    footer { padding:26px 0; background:#0b1930; color:#c5d1e4; font-size:.88rem; }
+    footer .wrap { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .footer-links { display:flex; gap:16px; }
+    .footer-links a { color:#e1eaff; text-decoration:none; }
+    .small-print { color:#93a5bf; font-size:.8rem; margin-top:10px; }
+    @media (max-width: 900px) {
+      .hero-grid, .contact-grid { grid-template-columns:1fr; gap:30px; }
+      .preview { max-width:560px; transform:none; }
+      .cards { grid-template-columns:repeat(2, 1fr); }
+      nav { gap:13px; }
+    }
+    @media (max-width: 620px) {
+      .wrap { width:min(100% - 28px, 1120px); }
+      .nav { min-height:68px; }
+      nav a:not(.btn) { display:none; }
+      .hero { padding:52px 0; }
+      section { padding:56px 0; }
+      .cards, .how-grid, .form-row { grid-template-columns:1fr; }
+      form { padding:20px; }
+      .topbar .wrap { justify-content:center; text-align:center; }
+      .hero-actions .btn { width:100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap">
+      <span>Friendly, reliable digital services</span>
+      <span>Serving individuals, students and small businesses</span>
+    </div>
+  </div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="MJ Digital Services home">
+        <span class="logo">MJ</span>
+        <span>MJ Digital Services<small>Good work. Clear results.</small></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#how-it-works">How it works</a>
+        <a class="btn primary" href="#request">Request a service</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">✦ Good work. Clear results.</span>
+          <h1>Your ideas, <span>beautifully</span> presented.</h1>
+          <p class="lead">Need a neat document, a polished CV, accurate typing or a flyer for your business or event? MJ Digital Services is here to help make your work look clear and professional.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#request">Tell me what you need <span aria-hidden="true">→</span></a>
+            <a class="btn secondary" href="#services">Explore services</a>
+          </div>
+          <div class="trust"><span>Clear communication</span><span>Agreed pricing</span><span>Personal service</span></div>
+        </div>
+        <div class="preview" aria-label="Service overview">
+          <div class="preview-top"><strong>What I can help with</strong><span class="dots"><i></i><i></i><i></i></span></div>
+          <div class="preview-card"><span class="preview-icon">📄</span><span><strong>Document formatting</strong><small>Clean, readable documents</small></span><span class="mini-tag">DOCS</span></div>
+          <div class="preview-card"><span class="preview-icon">🧑‍💼</span><span><strong>CV preparation</strong><small>Present your experience clearly</small></span><span class="mini-tag">CV</span></div>
+          <div class="preview-card"><span class="preview-icon">⌨️</span><span><strong>Typing and retyping</strong><small>Text entered with care</small></span><span class="mini-tag">TEXT</span></div>
+          <div class="preview-card"><span class="preview-icon">🎨</span><span><strong>Flyer design</strong><small>Promote your event or business</small></span><span class="mini-tag">DESIGN</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Services</span>
+          <h2>Practical help for your next task.</h2>
+          <p>Choose a service below and send a request. I will review the details and contact you to discuss timing, price and next steps.</p>
+        </div>
+        <div class="cards">
+          <article class="service-card"><div class="emoji">📄</div><h3>Document formatting</h3><p>Improve layout, headings, spacing, page numbers and readability in Word or PDF documents.</p></article>
+          <article class="service-card"><div class="emoji">🧑‍💼</div><h3>CV preparation</h3><p>Help organise your education, skills and experience into a clear, professional CV.</p></article>
+          <article class="service-card"><div class="emoji">⌨️</div><h3>Typing and retyping</h3><p>Type and organise letters, notes and other text from information you provide.</p></article>
+          <article class="service-card"><div class="emoji">🎨</div><h3>Flyer design</h3><p>Create simple, attractive flyers for small businesses, events and announcements.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Easy process</span>
+          <h2>Three steps from request to result.</h2>
+          <p>No complicated process. Tell me what you need and we can agree on the details before work begins.</p>
+        </div>
+        <div class="how-grid">
+          <article class="step"><div class="step-number">1</div><h3>Send your request</h3><p>Complete the form with your contact details, service and a short description.</p></article>
+          <article class="step"><div class="step-number">2</div><h3>Confirm the details</h3><p>I'll contact you to clarify the work, deadline and price before starting.</p></article>
+          <article class="step"><div class="step-number">3</div><h3>Receive your work</h3><p>Once the details are agreed, I'll work on the task and arrange delivery with you.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="request">
+      <div class="wrap contact-grid">
+        <div>
+          <div class="section-head">
+            <span class="eyebrow">Get in touch</span>
+            <h2>Tell me what you need.</h2>
+            <p>Fill in the form, then choose WhatsApp or email to send your request. You can also share this website link with someone who needs a service.</p>
+          </div>
+          <div class="contact-note">
+            <h3>Before you send</h3>
+            <ul>
+              <li>Describe the job clearly, but don't include passwords or sensitive information.</li>
+              <li>Wait for confirmation of the price and deadline before work begins.</li>
+              <li>For documents containing private details, share them only after agreeing on a safe method.</li>
+            </ul>
+            <p><strong>Response time:</strong> I'll reply as soon as I can.</p>
+          </div>
+        </div>
+        <form id="requestForm">
+          <div class="form-row">
+            <div class="field"><label for="name">Your name *</label><input id="name" name="name" autocomplete="name" required maxlength="80" placeholder="e.g. Alex"></div>
+            <div class="field"><label for="contact">Your WhatsApp or email *</label><input id="contact" name="contact" required maxlength="120" placeholder="How can I reach you?"></div>
+          </div>
+          <div class="form-row">
+            <div class="field"><label for="service">Service needed *</label><select id="service" name="service" required><option value="">Choose a service</option><option>Document formatting</option><option>CV preparation</option><option>Typing and retyping</option><option>Flyer design</option><option>Other / not sure yet</option></select></div>
+            <div class="field"><label for="deadline">Preferred deadline</label><input id="deadline" name="deadline" placeholder="e.g. Friday, if flexible" maxlength="80"></div>
+          </div>
+          <div class="field"><label for="details">Tell me about the job *</label><textarea id="details" name="details" required maxlength="2000" placeholder="What do you need done? Include any useful details."></textarea></div>
+          <p class="form-help">Your details are placed into a message for you to send. This page does not save submissions in a database.</p>
+          <div class="form-actions">
+            <button class="btn whatsapp" type="button" id="sendWhatsApp">Send by WhatsApp ↗</button>
+            <button class="btn primary" type="button" id="sendEmail">Send by email ↗</button>
+          </div>
+          <div class="status" id="status" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <section class="services" id="contact-details">
+    <div class="wrap">
+      <div class="section-head"><span class="eyebrow">Direct contact</span><h2>Contact MJ Digital Services.</h2><p>Prices are discussed with each customer before work begins.</p></div>
+      <div class="cards">
+        <article class="service-card"><div class="emoji">💬</div><h3>WhatsApp</h3><p><a href="https://wa.me/237651526786">+237 651 526 786</a></p></article>
+        <article class="service-card"><div class="emoji">✉️</div><h3>Email</h3><p><a href="mailto:marcasandack@gmail.com">marcasandack@gmail.com</a></p></article>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year"></span> MJ Digital Services. All rights reserved.</span>
+      <div class="footer-links"><a href="#services">Services</a><a href="#request">Contact</a></div>
+    </div>
+    <div class="wrap small-print">Independent digital service provider. Prices and delivery times are confirmed individually before work begins.</div>
+  </footer>
+
+  <script>
+    /*
+      SETUP REQUIRED:
+      1) Replace YOUR_WHATSAPP_NUMBER with your WhatsApp number in international format,
+         digits only, no plus sign, spaces or brackets. Cameroon example format: 2376XXXXXXXX.
+      2) Replace YOUR_EMAIL_ADDRESS with the email address where you want to receive requests.
+    */
+    const BUSINESS_WHATSAPP = "237651526786";
+    const BUSINESS_EMAIL = "marcasandack@gmail.com";
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const form = document.getElementById("requestForm");
+    const statusBox = document.getElementById("status");
+
+    function getRequestMessage() {
+      if (!form.reportValidity()) return null;
+      const data = new FormData(form);
+      return [
+        "Hello MJ Digital Services, I'd like to request a service.",
+        "",
+        "Name: " + data.get("name").trim(),
+        "My contact: " + data.get("contact").trim(),
+        "Service: " + data.get("service"),
+        "Preferred deadline: " + (data.get("deadline").trim() || "Not specified"),
+        "",
+        "Job details:",
+        data.get("details").trim()
+      ].join("\n");
+    }
+
+    function showStatus(message) {
+      statusBox.textContent = message;
+      statusBox.classList.add("show");
+    }
+
+    document.getElementById("sendWhatsApp").addEventListener("click", function () {
+      const message = getRequestMessage();
+      if (!message) return;
+      if (BUSINESS_WHATSAPP === "YOUR_WHATSAPP_NUMBER" || !/^\d{8,15}$/.test(BUSINESS_WHATSAPP)) {
+        showStatus("Setup needed: replace YOUR_WHATSAPP_NUMBER in the code with your WhatsApp number in international format, digits only. Then try again.");
+        return;
+      }
+      window.open("https://wa.me/" + BUSINESS_WHATSAPP + "?text=" + encodeURIComponent(message), "_blank", "noopener,noreferrer");
+      showStatus("WhatsApp opened with your request ready to send. Please press Send in WhatsApp to deliver it.");
+    });
+
+    document.getElementById("sendEmail").addEventListener("click", function () {
+      const message = getRequestMessage();
+      if (!message) return;
+      if (BUSINESS_EMAIL === "YOUR_EMAIL_ADDRESS" || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(BUSINESS_EMAIL)) {
+        showStatus("Setup needed: replace YOUR_EMAIL_ADDRESS in the code with the email address where you want to receive requests.");
+        return;
+      }
+      const subject = "New service request - MJ Digital Services";
+      window.location.href = "mailto:" + BUSINESS_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(message);
+      showStatus("Your email app should open with the request ready. Please review it and press Send to deliver it.");
+    });
+  </script>
+</body>
+</html>
